@@ -1,4 +1,4 @@
-package co.com.ceiba.Parking;
+package co.com.ceiba.parking;
 
 import static org.junit.Assert.assertTrue;
 
