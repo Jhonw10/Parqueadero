@@ -36,6 +36,6 @@ test {
 		append = false
 		destinationFile = file("jacoco/jacocoTest.exec")
 	}
-	reports.junitXml.destination = file ("jacoco/test-results")
+	reports.junitXml.destination = file ("build/jacoco/test-results")
 }
 jacocoTestReport.dependsOn(test)
