@@ -101,7 +101,7 @@ public class RegistryEntity {
 	public void setDisplacement(Long displacement) {
 		this.displacement = displacement;
 	}
-
+	
 	public BigDecimal getTotalValue() {
 		return totalValue;
 	}
