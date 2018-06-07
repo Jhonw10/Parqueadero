@@ -10,7 +10,6 @@
 .settings
 .springBeans
 .sts4-cache
-.class
 
 ### IntelliJ IDEA ###
 .idea
@@ -26,4 +25,3 @@
 /dist/
 /nbdist/
 /.nb-gradle/
-/bin/jacoco/
