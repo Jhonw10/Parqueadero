@@ -22,12 +22,6 @@ public class ParameterEntity {
 	public ParameterEntity() {
 	}
 
-	public ParameterEntity(String value, String code, String id) {
-		this.value = value;
-		this.code = code;
-		this.id = id;
-	}
-	
 	public String getId() {
 		return id;
 	}

@@ -23,12 +23,6 @@ public class VehicleTypeEntity {
 	
 	public VehicleTypeEntity() {
 	}
-
-	public VehicleTypeEntity(String name, String code, String id) {
-		this.name = name;
-		this.code = code;
-		this.id = id;
-	}
 	
 	public String getId() {
 		return id;

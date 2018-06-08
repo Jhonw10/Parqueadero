@@ -14,8 +14,7 @@ public class EntityTest {
 	
 	@Test
 	public void testMustValidateSetAndGetParameterEntity() {
-		ParameterEntity pe = new ParameterEntity();
-		ParameterEntity val = new ParameterEntity("value", "code", "id");
+		ParameterEntity val = new ParameterEntity();
 		val.setValue("value");
 		val.setCode("code");
 		val.setId("id");
@@ -26,8 +25,7 @@ public class EntityTest {
 	
 	@Test
 	public void testMustValidateSetAndGetCollectionEntity() {
-		CollectionTypeEntity pe = new CollectionTypeEntity();
-		CollectionTypeEntity val = new CollectionTypeEntity("name", "code", "id");
+		CollectionTypeEntity val = new CollectionTypeEntity();
 		val.setName("name");
 		val.setCode("code");
 		val.setId("id");
@@ -53,8 +51,7 @@ public class EntityTest {
 	
 	@Test
 	public void testMustValidateSetAndGetVehicleEntity() {
-		VehicleTypeEntity pe = new VehicleTypeEntity();
-		VehicleTypeEntity val = new VehicleTypeEntity("name", "code", "id");
+		VehicleTypeEntity val = new VehicleTypeEntity();
 		val.setName("name");
 		val.setCode("code");
 		val.setId("id");
