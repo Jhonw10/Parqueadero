@@ -43,7 +43,7 @@ public class ParameterEntity {
 	public String getValue() {
 		return value;
 	}
-	public void setName(String value) {
+	public void setValue(String value) {
 		this.value = value;
 	}
 
