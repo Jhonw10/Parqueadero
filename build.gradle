@@ -38,7 +38,8 @@ dependencies {
 }
 
 test {
-	// systemProperties 'property': 'value'
+	exclude 'co/com/ceiba/parking/entity/**'
+	exclude 'co/com/ceiba/parking/model/**'
 	jacoco {
 		append = false
 		destinationFile = file("jacoco/jacocoTest.exec")
