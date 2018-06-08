@@ -100,5 +100,24 @@ public class ParkingUtilImplTest {
 		Long expected = 100L;
 		assertEquals(expected, result);
 	}
+	
+	@Test
+	public void testMustGet0ValueWhenValueIsNotInListPricesByCode() {
+		VehicleType veh = new VehicleType();
+		veh.setCode("AUTOMOVILA");
+		CollectionType coll = new CollectionType();
+		coll.setCode("DIA");
+		Price price = new Price();
+		price.setIdVehicleType(veh);
+		price.setIdCollectionType(coll);
+		price.setValue(100L);
+		List<Price> prices = new ArrayList<Price>();
+		prices.add(price);
+		
+		Long result = parkingUtilImpl.getValueByListPrices(prices, "AUTOMOVIL", "DIA");
+		
+		Long expected = 0L;
+		assertEquals(expected, result);
+	}
 
 }

@@ -71,7 +71,7 @@ public class RegistryServiceImpl implements RegistryService {
 	@Override
 	public BigDecimal getTotalCost(String licensePlate) {
 		List<RegistryEntity> registries = registryDao.getRegistryByLicensePlateAndStatus(licensePlate, "1");
-		parkingValidation.isValidRegistryToRemove(registries == null ? false : !registries.isEmpty());
+		parkingValidation.isValidRegistryToRemove(!registries.isEmpty());
 		List<PriceEntity> prices = priceDao.getAllPrices();
 		RegistryEntity registryEntity = registries.get(0);
 		BigDecimal totalCost = parkingUtil.calculateChargedToVehicle(RegistryBuilder.convertiToDomain(registryEntity), PriceBuilder.convertListToDomain(prices));

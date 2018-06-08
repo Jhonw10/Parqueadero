@@ -3,6 +3,7 @@ package co.com.ceiba.parking.util.impl;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,8 +49,9 @@ public class ParkingUtilImpl implements ParkingUtil {
 	}
 	
 	public Long getValueByListPrices(List<Price> prices, String codeVehicle, String codeCollect) {
-		return prices.stream().filter(x -> x.getIdVehicleType().getCode().equals(codeVehicle)
-				&& x.getIdCollectionType().getCode().equals(codeCollect)).findFirst().get().getValue();
+		Optional<Price> priceOpt = prices.stream().filter(x -> x.getIdVehicleType().getCode().equals(codeVehicle)
+				&& x.getIdCollectionType().getCode().equals(codeCollect)).findFirst(); 
+		return priceOpt.isPresent() ? priceOpt.get().getValue() : 0L;
 	}
 
 }
