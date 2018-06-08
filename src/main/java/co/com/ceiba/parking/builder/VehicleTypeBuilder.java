@@ -13,7 +13,7 @@ public class VehicleTypeBuilder {
 	public static VehicleType convertiToDomain(VehicleTypeEntity vehicleTypeEntity) {
 		VehicleType vehicleType = null;
 		if(vehicleTypeEntity != null) {
-			vehicleType = new VehicleType(vehicleTypeEntity.getName(), vehicleTypeEntity.getCode(),vehicleTypeEntity.getId());
+			vehicleType = new VehicleType(vehicleTypeEntity.getId(), vehicleTypeEntity.getCode(), vehicleTypeEntity.getName());
 		}
 		return vehicleType;
 	}

@@ -1,41 +1,14 @@
 package co.com.ceiba.parking.model;
 
-import java.io.Serializable;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-public class VehicleType implements Serializable{
-	private static final long serialVersionUID = -4087970586697604468L;
-	
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class VehicleType{
 	private String id;
 	private String code;
 	private String name;
-	
-	public VehicleType() {
-	}
-
-	public VehicleType(String name, String code, String id) {
-		this.name = name;
-		this.code = code;
-		this.id = id;
-	}
-	
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public String getCode() {
-		return code;
-	}
-	public void setCode(String code) {
-		this.code = code;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	
 }

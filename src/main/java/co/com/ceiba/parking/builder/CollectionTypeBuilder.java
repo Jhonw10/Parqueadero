@@ -13,7 +13,7 @@ public class CollectionTypeBuilder {
 	public static CollectionType convertiToDomain(CollectionTypeEntity CollectionTypeEntity) {
 		CollectionType CollectionType = null;
 		if(CollectionTypeEntity != null) {
-			CollectionType = new CollectionType(CollectionTypeEntity.getName(), CollectionTypeEntity.getCode(),CollectionTypeEntity.getId());
+			CollectionType = new CollectionType(CollectionTypeEntity.getId(), CollectionTypeEntity.getCode(), CollectionTypeEntity.getName());
 		}
 		return CollectionType;
 	}
