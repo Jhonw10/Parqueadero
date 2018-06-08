@@ -42,12 +42,6 @@ test {
 	jacoco {
 		append = false
 		destinationFile = file("jacoco/jacocoTest.exec")
-		
-		afterEvaluate {
-	        classDirectories = files(classDirectories.files.collect {
-	            fileTree(dir: it, exclude: 'co/com/ceiba/parking/entity/**')
-	        })
-	    }
 	}
 	reports.junitXml.destination = file ("build/jacoco/test-results")
 }
