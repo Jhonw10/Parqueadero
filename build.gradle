@@ -38,9 +38,11 @@ dependencies {
 }
 
 test {
-	exclude 'co/com/ceiba/parking/entity/**'
-	exclude 'co/com/ceiba/parking/model/**'
+	
 	jacoco {
+	
+		excludes +=['co/com/ceiba/parking/entity/**',
+					'co/com/ceiba/parking/model/**']
 		append = false
 		destinationFile = file("jacoco/jacocoTest.exec")
 	}
