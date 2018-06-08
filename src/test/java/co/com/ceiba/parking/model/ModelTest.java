@@ -2,6 +2,7 @@ package co.com.ceiba.parking.model;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -33,6 +34,10 @@ public class ModelTest {
 		assertEquals(registry2.getLicensePlate(), "license");
 		assertEquals(registry2.getTotalValue(), bd);
 		assertNull(registry2.getIdVehicleType());
+		registry.equals(registry);
+		registry.hashCode();
+		registry.toString();
+		
 	}
 	
 	@Test
@@ -45,6 +50,9 @@ public class ModelTest {
 		assertNull(val.getIdVehicleType());
 		assertNull(val.getIdCollectionType());
 		assertEquals(val.getValue(), ld);
+		price.equals(price);
+		price.hashCode();
+		price.toString();
 	}
 	
 	@Test
@@ -55,6 +63,9 @@ public class ModelTest {
 		assertEquals(val.getId(), "id");
 		assertEquals(val.getCode(), "code");
 		assertEquals(val.getName(), "name");
+		coll.equals(coll);
+		coll.hashCode();
+		coll.toString();
 	}
 	
 	@Test
@@ -65,5 +76,8 @@ public class ModelTest {
 		assertEquals(val.getId(), "id");
 		assertEquals(val.getCode(), "code");
 		assertEquals(val.getName(), "name");
+		vehi.equals(vehi);
+		vehi.hashCode();
+		vehi.toString();
 	}
 }
