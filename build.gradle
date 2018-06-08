@@ -40,11 +40,14 @@ dependencies {
 test {
 	
 	jacoco {
-	
-		excludes +=['co/com/ceiba/parking/entity/**',
-					'co/com/ceiba/parking/model/**']
 		append = false
 		destinationFile = file("jacoco/jacocoTest.exec")
+		
+		afterEvaluate {
+	        classDirectories = files(classDirectories.files.collect {
+	            fileTree(dir: it, exclude: 'co/com/ceiba/parking/entity/**')
+	        })
+	    }
 	}
 	reports.junitXml.destination = file ("build/jacoco/test-results")
 }
