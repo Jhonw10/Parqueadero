@@ -151,6 +151,7 @@ public class RegistryServiceImplTest {
 		rEnt = Mockito.spy(rEnt);
 		listReg.add(rEnt);
 		List<PriceEntity> prices = new ArrayList<PriceEntity>();
+		prices.add(new PriceEntity());
 		Mockito.doReturn(listReg).when(registryDao).getRegistryByLicensePlateAndStatus(Mockito.anyString(), Mockito.anyString());
 		Mockito.doReturn(true).when(parkingValidation).isValidRegistryToRemove(Mockito.anyBoolean());
 		Mockito.doReturn(prices).when(priceDao).getAllPrices();

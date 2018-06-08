@@ -18,14 +18,6 @@ public class CollectionTypeBuilder {
 		return CollectionType;
 	}
 	
-	public static CollectionTypeEntity convertToEntity(CollectionType CollectionType) {
-		CollectionTypeEntity CollectionTypeEntity = new CollectionTypeEntity();
-		CollectionTypeEntity.setId(CollectionType.getId());
-		CollectionTypeEntity.setCode(CollectionType.getCode());
-		CollectionTypeEntity.setName(CollectionType.getName());
-		return CollectionTypeEntity;
-	}
-	
 	public static List<CollectionType> convertListToDomain(List<CollectionTypeEntity> CollectionTypeEntities) {
 		List<CollectionType> vehiclesType = new ArrayList<CollectionType>();
 		if(CollectionTypeEntities != null) {

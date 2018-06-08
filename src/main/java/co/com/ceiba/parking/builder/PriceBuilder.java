@@ -21,15 +21,6 @@ public class PriceBuilder {
 		return price;
 	}
 	
-	public static PriceEntity convertToEntity(Price price) {
-		PriceEntity priceEntity = new PriceEntity();
-		priceEntity.setId(price.getId());
-		priceEntity.setIdCollectionType(CollectionTypeBuilder.convertToEntity(price.getIdCollectionType()));
-		priceEntity.setIdVehicleType(VehicleTypeBuilder.convertToEntity(price.getIdVehicleType()));
-		priceEntity.setValue(price.getValue());
-		return priceEntity;
-	}
-	
 	public static List<Price> convertListToDomain(List<PriceEntity> priceEntities) {
 		List<Price> prices = new ArrayList<Price>();
 		if(priceEntities != null) {
