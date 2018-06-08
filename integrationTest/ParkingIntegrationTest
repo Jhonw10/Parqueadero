@@ -216,4 +216,27 @@ assert jsonSlurper[0].licensePlate != ""
 assert jsonSlurper[0].startDate != ""
 assert jsonSlurper[0].displacement != ""
 assert jsonSlurper[0].vehicleTypeCode != ""
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="44e9d25a-715c-4518-857d-d7fc88f9f248" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestAddGeneateErrorWhenLetterBeginA" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="addRegistry" id="2c8070ae-56a0-43c8-b404-35acab878d5d"><con:settings/><con:config service="http://local.sura.com:8090" resourcePath="/registry" methodName="addRegistry" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="addRegistry" id="15503496-086c-4ba5-be7b-87e676106d3d" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://local.sura.com:8090</con:endpoint><con:request>{
+	"licensePlate" : "AAAA23",
+	"vehicleTypeCode" : "AUTOMOVIL",
+	"displacement" : 2000
+}</con:request><con:originalUri>http://local.sura.com/registry</con:originalUri><con:assertion type="GroovyScriptAssertion" id="2c53cdeb-efb8-4581-913a-ef3856094b05" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+
+def headers =  messageExchange.getResponseHeaders()
+log.info headers["#status#"]
+assert ['HTTP/1.1 422 '] == headers["#status#"]
+
+//assert messageExchange.timeTaken &lt; 5000
+
+//grab the response
+def ResponseMessage = messageExchange.response.responseContent
+//define a JsonSlurper
+def jsonSlurper = new JsonSlurper().parseText(ResponseMessage)
+
+//verify the slurper isn't empty
+assert jsonSlurper.status == 422
+assert jsonSlurper.message == "Can not enter because you are not in a business day"
+assert jsonSlurper.error == "Unprocessable Entity"
+
+
 </scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
