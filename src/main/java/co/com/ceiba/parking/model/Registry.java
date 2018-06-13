@@ -25,11 +25,11 @@ public class Registry {
 	private String vehicleTypeCode;
 	private Date startDate;
 	@NotNull
-    @Size(min=4, max=7)
+    @Size(min=4, max=7, message = "The size of License plate should be between 4 and 7")
 	private String licensePlate;
 	@NotNull
-	@Min(0)
-	@Max(10000)
+	@Min(value = 0, message = "The min size of Displacement should be 0")
+	@Max(value = 10000, message = "The max size of Displacement should be 10000")
 	private Long displacement;
 	@JsonIgnore
 	private BigDecimal totalValue;
